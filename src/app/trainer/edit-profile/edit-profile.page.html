@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar color=fjhdark mode="ios">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>แก้ไขโปรไฟล์</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="profile">
+    <div class="image" (click)="toCamera()">
+      <img src="{{user.image_url}}" alt="">
+      <div class="edit">
+        <img src="assets/icon/camera.svg" alt="">
+      </div>
+    </div>
+
+  </div>
+  <!-- <div class="title">Create a new account to <span>Trainer</span></div> -->
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">First name</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.firstname"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Last name</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.lastname"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">About me</ion-label>
+    <ion-textarea color=light mode="ios" rows="3" [(ngModel)]="user.about"></ion-textarea>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Location</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.address.name"></ion-input>
+    <ion-icon name="pin" slot="end" color=light (click)="openmap()"></ion-icon>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Phone number</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.contact.phone"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Line ID</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.contact.line"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Facebook Url</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.contact.facebook"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Type</ion-label>
+    <div class="value">
+      <ion-select style="width: 210vw; padding: 0" multiple="true" cancelText="Cancel" okText="Confirm"
+        interface="alert" placeholder="Please Select" [interfaceOptions]="customPopoverOptionsType"
+        [(ngModel)]="user.type">
+        <ion-select-option value="Cardio">Cardio</ion-select-option>
+        <ion-select-option value="Body Composition">Body Composition</ion-select-option>
+        <ion-select-option value="Mascular Endurance">Mascular Endurance</ion-select-option>
+        <ion-select-option value="Muscle Strength">Muscle Strength</ion-select-option>
+        <ion-select-option value="Flexibility">Flexibility</ion-select-option>
+        <ion-select-option value="Anaerobic">Anaerobic</ion-select-option>
+        <ion-select-option value="Aerobic">Aerobic</ion-select-option>
+        <ion-select-option value="Isotonic">Isotonic</ion-select-option>
+        <ion-select-option value="Fitness Training">Fitness Training</ion-select-option>
+        <ion-select-option value="Boxing">Boxing</ion-select-option>
+        <ion-select-option value="Run">Run</ion-select-option>
+        <ion-select-option value="Yoka">Yoka</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Food</ion-label>
+    <div class="value">
+      <ion-select style="width: 210vw; padding: 0" multiple="true" cancelText="Cancel" okText="Confirm" interface="alert" placeholder="Please Select"
+        [interfaceOptions]="customPopoverOptionsFood" [(ngModel)]="user.food">
+        <ion-select-option value="Ketogenic Diet">Ketogenic Diet</ion-select-option>
+        <ion-select-option value="LowCarb Diet">LowCarb Diet</ion-select-option>
+        <ion-select-option value="Vegenarian">Vegenarian</ion-select-option>
+        <ion-select-option value="IF">IF(Intermittent Fastinng)</ion-select-option>
+        <ion-select-option value="Hight Protien Diet">Hight Protien Diet</ion-select-option>
+        <ion-select-option value="Paleo Diet">Paleo Diet</ion-select-option>
+        <ion-select-option value="Worrior Diet Fasting">Worrior Diet Fasting</ion-select-option>
+        <ion-select-option value="Meal Prep">Meal Prep</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-item>
+  <!-- <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Food</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.food"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Age</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.age"></ion-input>
+  </ion-item> -->
+  <br>
+  <!-- <div class="create">and you need to account <span>verify form FJH?</span></div> -->
+  <ion-button shape="round" expand="full" fill="outline" color=fjh (click)="save()">Save</ion-button>
+
+</ion-content>
+<!-- <ion-footer padding>
+    
+</ion-footer> -->

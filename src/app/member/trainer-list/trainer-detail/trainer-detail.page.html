@@ -1,0 +1,62 @@
+<ion-content>
+  <div
+    style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0, 0, 0, 0.6); position: absolute; top: 10px; left: 10px; display: flex; justify-content: center; align-items: center; font-size: 20px; color: #fff" (click)="back()">
+    <ion-icon ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
+  </div>
+
+  <div class="image-profile">
+    <img src="{{data.image_url}}" alt="">
+  </div>
+  <div class="contact">
+    <div class="item" [class.disable]="data.contact.facebook==''">
+      <a href="{{data.contact.facebook}}">
+        <img src="assets/icon/fb.svg" alt="">
+      </a>
+    </div>
+    <div class="item" [class.disable]="data.contact.line==''">
+      <a href="http://line.me/ti/p/~{{data.contact.line}}">
+        <img src="assets/icon/line.svg" alt="">
+      </a>
+    </div>
+    <div class="item" [class.disable]="data.contact.phone==''">
+      <a href="tel:{{data.contact.phone}}">
+        <img src="assets/icon/call.svg" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="box-slide">
+    <h1 class="green">{{data.firstname}} {{data.lastname}}</h1>
+    <div class="detail">{{data.about}}</div>
+    <div style="display: flex; font-size: 16px; color: #fff" *ngIf="data.age!=undefined">
+      <div style="margin-right: 5px;">อายุ</div>
+      <div>{{data.age}} ปี</div>
+    </div>
+    <div class="detail2">
+      <img src="./assets/icon/muscles.svg" alt="" *ngIf="data.type!=undefined">
+      <span class="text">{{data.type}}</span>
+    </div>
+    <div class="detail2">
+      <img src="./assets/icon/restaurant.svg" alt="" *ngIf="data.food!=undefined">
+      <span class="text">{{data.food}}</span>
+    </div>
+    <div class="rate">
+      <img src="assets/icon/maps-and-flags.svg" alt=""> <span>{{data.address.name}}</span><br><span
+        class="mini">{{data.address.place}}</span>
+    </div>
+    <h2 class="green">comment</h2>
+    <div class="comment" *ngFor="let comment of comments">
+      <div class="header">{{comment.username}} <span>{{comment.date}}</span></div>
+      <div class="text">{{comment.comment}}</div>
+    </div>
+    <div class="comment-input">
+      <div class="input">
+        <textarea name="" id="" rows="3" placeholder="Enter your comment this here..."
+          [(ngModel)]="commentInput"></textarea>
+      </div>
+      <div>
+        <div class="button" (click)="send()">ส่ง</div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

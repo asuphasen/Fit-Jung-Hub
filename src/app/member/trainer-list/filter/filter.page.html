@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color=dark>
+    <!-- <ion-back-buttons>
+      <button ion-button slot="start"></button>
+    </ion-back-buttons> -->
+    <ion-title>Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- nearby -->
+  <div class="item" (click)="open(0)">
+    <div class="title">nearby</div>
+    <div class="value" *ngIf="!range_km"><span>Distance</span></div>
+    <div class="value" *ngIf="range_km">{{range_km}} km.</div>
+    <div class="arrow">
+      <img src="./assets/icon/right-arrow (1).svg" alt="" *ngIf="!tabs[0]">
+      <img src="./assets/icon/right-arrow (1).svg" style="transform: rotate(90deg)" alt="" *ngIf="tabs[0]">
+    </div>
+  </div>
+  <ion-range snaps="true" min="0" max="100" step="5" pin="true" [(ngModel)]="range_km" color=fjh *ngIf="tabs[0]" @OpenIn>
+
+  </ion-range>
+  <!-- Type -->
+  <div class="item">
+    <div class="title">Type</div>
+    <div class="value">
+      <ion-select multiple="true" cancelText="Cancel" okText="Confirm" interface="alert" placeholder="Please Select"
+        [interfaceOptions]="customPopoverOptionsType" [(ngModel)]="type">
+        <ion-select-option value="Cardio">Cardio</ion-select-option>
+        <ion-select-option value="Body Composition">Body Composition</ion-select-option>
+        <ion-select-option value="Mascular Endurance">Mascular Endurance</ion-select-option>
+        <ion-select-option value="Muscle Strength">Muscle Strength</ion-select-option>
+        <ion-select-option value="Flexibility">Flexibility</ion-select-option>
+        <ion-select-option value="Anaerobic">Anaerobic</ion-select-option>
+        <ion-select-option value="Aerobic">Aerobic</ion-select-option>
+        <ion-select-option value="Isotonic">Isotonic</ion-select-option>
+        <ion-select-option value="Fitness Training">Fitness Training</ion-select-option>
+        <ion-select-option value="Boxing">Boxing</ion-select-option>
+        <ion-select-option value="Run">Run</ion-select-option>
+        <ion-select-option value="Yoka">Yoka</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+  <!-- Food -->
+  <div class="item" (click)="open(2)">
+    <div class="title">Food</div>
+    <div class="value">
+      <ion-select multiple="true" cancelText="Cancel" okText="Confirm" interface="alert" placeholder="Please Select"
+        [interfaceOptions]="customPopoverOptionsFood" [(ngModel)]="food">
+        <ion-select-option value="Ketogenic Diet">Ketogenic Diet</ion-select-option>
+        <ion-select-option value="LowCarb Diet">LowCarb Diet</ion-select-option>
+        <ion-select-option value="Vegenarian">Vegenarian</ion-select-option>
+        <ion-select-option value="IF">IF(Intermittent Fastinng)</ion-select-option>
+        <ion-select-option value="Hight Protien Diet">Hight Protien Diet</ion-select-option>
+        <ion-select-option value="Paleo Diet">Paleo Diet</ion-select-option>
+        <ion-select-option value="Worrior Diet Fasting">Worrior Diet Fasting</ion-select-option>
+        <ion-select-option value="Meal Prep">Meal Prep</ion-select-option>
+      </ion-select>
+    </div>
+
+  </div>
+  <!-- Sex -->
+  <div class="item" (click)="open(3)">
+    <div class="title">Sex</div>
+    <div class="value">
+      <ion-select cancelText="Cancel" okText="Confirm" interface="alert" placeholder="Please Select"
+        [interfaceOptions]="customPopoverOptionsFood" [(ngModel)]="sex">
+        <ion-select-option value="f">Female</ion-select-option>
+        <ion-select-option value="m">Male</ion-select-option>
+        <ion-select-option value="lgbt">LGBT</ion-select-option>
+      </ion-select>
+    </div>
+
+  </div>
+  <!-- Age -->
+  <div class="item" (click)="open(4)">
+    <div class="title">Age</div>
+    <div class="value" *ngIf="!age"><span>select</span></div>
+    <div class="value" *ngIf="age">{{age.lower}} - {{age.upper}} yrs.</div>
+    <div class="arrow">
+      <img src="./assets/icon/right-arrow (1).svg" alt="" *ngIf="!tabs[4]">
+      <img src="./assets/icon/right-arrow (1).svg" style="transform: rotate(90deg)" alt="" *ngIf="tabs[4]">
+    </div>
+  </div>
+  <ion-range dualKnobs="true" min="18" max="80" step="1" pin="true" @OpenIn *ngIf="tabs[4]" [(ngModel)]="age" color=fjh>
+  </ion-range>
+
+  <div style="position: absolute; bottom: 20px; width: 100%;">
+    <ion-button shape="round" expand="full" fill="outline" color=fjh style="margin: 10px 20px; background: #222428; border-radius: 1000px" (click)="confirm()">Confirm</ion-button>
+    <ion-button shape="round" expand="full" fill="outline" color=fjh style="margin: 10px 20px;" (click)="cancel()">cancel</ion-button>
+  </div>
+
+
+</ion-content>

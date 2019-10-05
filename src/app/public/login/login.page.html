@@ -1,0 +1,20 @@
+<ion-content fullscreen>
+  <div class="form-login">
+    <div class="logo">
+      <img src="assets/images/FJH.png" alt="">
+    </div>
+    <div class="form">
+      <ion-item no-margin no-padding mode="ios">
+        <ion-label position="floating" color=fjh mode="ios">E-mail</ion-label>
+        <ion-input color=fjhlight [(ngModel)]="email" mode="ios"></ion-input>
+      </ion-item>
+      <ion-item no-margin no-padding  mode="ios">
+        <ion-label position="floating" color=fjh  mode="ios">Password</ion-label>
+        <ion-input color=fjhlight [(ngModel)]="password"  mode="ios" type="password"></ion-input>
+      </ion-item>
+      <br>
+      <ion-button shape="round" expand="full" fill="outline" color=fjh (click)="login()">Sing In</ion-button>
+      <div class="create" (click)="nav()">Create a new account</div>
+    </div>
+  </div>
+</ion-content>

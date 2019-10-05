@@ -1,0 +1,70 @@
+ion-content {
+  --background: #1b1c26;
+}
+
+.trainer-box {
+  transition: 0.5s all ease;
+  width: 45vw;
+  height: 45vw;
+  background: #1b1c26;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    // height: 100%;
+    object-fit: cover;
+  }
+  .menu-text {
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+  }
+}
+.trainer-detail-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  margin-top: 10px;
+  height: 60px;
+  .name {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .detail {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px 0 10px;
+  .select {
+    flex: 1;
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  .filter {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
+}

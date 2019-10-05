@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color=fjhdark mode="ios">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="md-arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>เลือกตำแหน่งของคุณ</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="save()">
+        <ion-icon slot="icon-only" name="md-checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div #map id="map" style="height:100%;width:100%"></div>
+  <div class="show-result" [class.active]="isHasLoaction">
+    <!-- <div>{{mapMove}}</div> -->
+    <div class="name">{{address.name}}</div>
+    <div class="place">{{address.place}}</div>
+    <div class="location">({{address.location.latitude}},{{address.location.longitude}})</div>
+  </div>
+  <div class="marker">
+    <img src="assets/icon/pin.svg" alt="">
+  </div>
+</ion-content>

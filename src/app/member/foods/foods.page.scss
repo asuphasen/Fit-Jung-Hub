@@ -1,0 +1,32 @@
+ion-content {
+  --background: #1b1c26;
+}
+
+.top-text {
+  font-size: 16px;
+  padding: 10px;
+  color: #fff;
+}
+.food-box {
+  transition: 0.5s all ease;
+  width: 45vw;
+  height: 45vw;
+  background: #1b1c26;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .menu-text {
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    z-index: 999;
+  }
+}
+.food-box:active:hover {
+  transform: scale(0.9);
+}

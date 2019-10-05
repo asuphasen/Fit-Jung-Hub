@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color=fjhdark mode="ios">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><img src="assets/images/FJH.png" height="40px" alt=""></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="top">
+    <div class="select">Select Trainer</div>
+    <div (click)="gotoFilter()"
+      style="width: 100px; height: 30px; border: 2px solid #fff; color: #fff; border-radius: 100px; display: flex; justify-content: center; align-items: center">
+      <div style="font-size: 16px">Filter</div>
+      <div class="filter">
+        <img src="./assets/icon/filter-tool-black-shape.svg" alt="">
+      </div>
+    </div>
+
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of data" (click)="gotoDetail(item)">
+        <div class="trainer-box">
+          <!-- <img src="./assets/images/la-fitness-intensity.jpg" alt=""> -->
+          <img src="{{item.image_url}}" alt="">
+        </div>
+        <div class="trainer-detail-box">
+          <div class="name">{{item.firstname}} {{item.lastname}}</div>
+          <div class="detail" *ngIf="item.about!=''">
+            {{item.about}}
+          </div>
+          <div class="detail" *ngIf="item.about==''">
+            ไม่มีคำอธิบาย
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

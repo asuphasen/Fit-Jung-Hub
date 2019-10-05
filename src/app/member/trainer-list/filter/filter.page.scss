@@ -1,0 +1,47 @@
+ion-content {
+  --background: #1b1c26;
+}
+
+ion-range {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.item {
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .title {
+    color: #cef64f;
+  }
+  .value {
+    color: #fff;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    span {
+      color: rgba(154, 154, 154, 0.6);
+    }
+    ion-select {
+      width: 100%;
+      text-align: right;
+    }
+  }
+  .arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s all ease;
+  }
+}

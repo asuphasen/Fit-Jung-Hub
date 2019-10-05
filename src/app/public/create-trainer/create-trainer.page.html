@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color=dark mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title><img src="assets/images/FJH.png" height="40px" alt=""></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="title">Create a new account to <span>Trainer</span></div>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">First name</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.firstname"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Last name</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.lastname"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">E-mail</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Password</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Birthday</ion-label>
+    <ion-datetime color=light displayFormat="MM/DD/YYYY" mode="ios" [(ngModel)]="user.birthday"></ion-datetime>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">Sex</ion-label>
+    <ion-select color=light mode="ios" placeholder="Select One" [(ngModel)]="user.sex">
+      <ion-select-option value="f">Female</ion-select-option>
+      <ion-select-option value="m">Male</ion-select-option>
+      <ion-select-option value="lgbt">LGBT</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item no-margin no-padding mode="ios">
+    <ion-label position="floating" color=fjh mode="ios">ID Card</ion-label>
+    <ion-input color=light mode="ios" [(ngModel)]="user.idcard" type="tel" maxlength="13"></ion-input>
+  </ion-item>
+  <br>
+  <div class="create">and you need to account <span>verify form FJH?</span></div>
+  <ion-button shape="round" expand="full" fill="outline" color=fjh (click)="save()">Create account</ion-button>
+
+</ion-content>

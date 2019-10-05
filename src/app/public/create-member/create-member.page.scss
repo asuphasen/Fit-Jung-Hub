@@ -1,0 +1,27 @@
+ion-content{
+    --background: #1B1c26;
+}
+ion-toolbar {
+    --background:#1B1c26;
+    // --ion-color-base: transparent !important;
+}
+ion-item{
+    --background: transparent;
+}
+.create{
+    color: #fff;text-align: center;
+    padding: 20px 0;
+    text-decoration: underline;
+}
+.title{
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+}
+
+ion-datetime{
+    color: #ffffff !important;
+}   
+ion-select{
+    color: #ffffff !important;
+}

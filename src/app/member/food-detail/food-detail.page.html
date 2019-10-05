@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color=dark>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{data.menu_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="img-top">
+    <img src="{{data.img}}" alt="">
+    <div class="menu-text">{{data.menu_name}}</div>
+  </div>
+
+  <div class="content">
+    <div *ngFor="let item of days; let i = index">
+      <div class="day-box" *ngIf="item.status" (click)="gotoDetail(item.no)">
+        <img src="./assets/images/food3.jpg" alt="">
+        <div class="day-text">day {{item.no}}</div>
+      </div>
+
+      <div class="lock-box" (click)="createDiv(i)" *ngIf="item.btn">
+        <div class="bg"></div>
+        <div class="text">
+          <div class="lock-icon">
+            <img src="./assets/icon/lock.svg" alt="">
+          </div>
+          <div class="lock-text">Good job! Do you want to continue day {{i+1}} ?</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="lock-box" (click)="createDiv()">
+      <div class="bg"></div>
+      <div class="text">
+        <div class="lock-icon">
+          <img src="./assets/icon/lock.svg" alt="">
+        </div>
+        <div class="lock-text">Good job! Do you want to continue?</div>
+      </div>
+    </div> -->
+  </div>
+
+</ion-content>

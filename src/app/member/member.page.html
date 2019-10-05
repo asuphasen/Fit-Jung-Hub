@@ -1,0 +1,28 @@
+<ion-menu side="start" mode="ios" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar color="fjhdark">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="fjhdark">
+      <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+        <ion-item color="fjhdark" [routerLink]="p.url">
+          <ion-icon name="{{p.icon}}" slot="start"></ion-icon>
+          <ion-label>
+            {{ p.title }}
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle auto-hide="false" (click)="logout()">
+        <ion-item color="fjhdark">
+          <ion-icon name="md-log-out" slot="start"></ion-icon>
+          <ion-label>
+            Logout
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+  
+    </ion-content>
+  </ion-menu>
+  
+  <ion-router-outlet main></ion-router-outlet>

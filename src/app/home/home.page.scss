@@ -1,0 +1,58 @@
+ion-content {
+  --background: #1b1c26;
+}
+
+.trainer-box {
+  transition: 0.5s all ease;
+  width: 45vw;
+  height: 45vw;
+  background: red;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .menu-text {
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+  }
+}
+.trainer-detail-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  margin-top: 10px;
+  .name {
+    font-size: 16px;
+  }
+  .detail {
+    font-size: 12px;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  .select {
+    flex: 1;
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  .filter {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    img {
+      width: 100%;
+    }
+  }
+}

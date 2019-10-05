@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color=fjhdark mode="ios">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><img src="assets/images/FJH.png" height="40px" alt=""></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="image-profile">
+    <img src="{{user.image_url}}" alt="">
+  </div>
+  <div class="contact">
+    <div class="item" [class.disable]="user.contact.facebook==''">
+      <a href="{{user.contact.facebook}}">
+        <img src="assets/icon/fb.svg" alt="">
+      </a>
+    </div>
+    <div class="item" [class.disable]="user.contact.line==''">
+      <a href="http://line.me/ti/p/~{{user.contact.line}}">
+        <img src="assets/icon/line.svg" alt="">
+      </a>
+    </div>
+    <div class="item" [class.disable]="user.contact.phone==''">
+      <a href="tel:{{user.contact.phone}}">
+        <img src="assets/icon/call.svg" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="box-slide">
+    <h1 class="green">{{user.firstname}} {{user.lastname}}</h1>
+    <div class="detail">{{user.about}}</div>
+    <div style="display: flex; font-size: 16px; color: #fff" *ngIf="user.age!=undefined">
+      <div style="margin-right: 5px;">อายุ</div>
+      <div>{{user.age}} ปี</div>
+    </div>
+    <div class="detail2">
+      <img src="./assets/icon/muscles.svg" alt="" *ngIf="user.type!=undefined">
+      <span class="text">{{user.type}}</span>
+    </div>
+    <div class="detail2">
+      <img src="./assets/icon/restaurant.svg" alt="" *ngIf="user.food!=undefined">
+      <span class="text">{{user.food}}</span>
+    </div>
+    <div class="rate">
+      <img src="assets/icon/maps-and-flags.svg" alt=""> <span>{{user.address.name}}</span><br><span
+        class="mini">{{user.address.place}}</span>
+    </div>
+    <h2 class="green">comment</h2>
+    <div class="comment" *ngFor="let comment of comments">
+      <div class="header">{{comment.username}} <span>{{comment.date}}</span></div>
+      <div class="text">{{comment.comment}}</div>
+    </div>
+    <div class="comment-input">
+      <div class="input">
+        <textarea name="" id="" rows="3" placeholder="Enter your comment this here..."
+          [(ngModel)]="commentInput"></textarea>
+      </div>
+      <div>
+        <div class="button" (click)="send()">ส่ง</div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
